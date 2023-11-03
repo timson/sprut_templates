@@ -1,0 +1,79 @@
+{
+  "manufacturer": "Nuki",
+  "model": "Nuki Smart Lock",
+  "manufacturerId": "Nuki",
+  "modelId": "Pro 3",
+  "catalogId": 139,
+  "status": "Done",
+  "services": [
+    {
+      "type": "LockMechanism",
+      "characteristics": [
+        {
+          "type": "LockTargetState",
+            "link": {
+            "type": "Integer",
+            "topicSearch": "nuki/(.*)/state",
+            "topicGet": "nuki/(1)/state",
+            "topicSet": "nuki/(1)/lockAction",
+            "map": {
+              "0": "3;6",
+              "1": "1"
+            },
+            "outMap": {
+              "0": "1",
+              "1": "2"
+            }
+          }
+        },
+        {
+          "type": "LockCurrentState",
+          "link": {
+            "type": "Integer",
+            "topicSearch": "nuki/(.*)/state",
+            "topicGet": "nuki/(1)/state",
+            "topicSet": "nuki/(1)/state",
+            "map": {
+                "0": "3;6",
+                "1": "1"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "BatteryService",
+      "characteristics": [
+        {
+          "type": "BatteryLevel",
+          "link": {
+            "topicGet": "nuki/(1)/batteryChargeState"
+          }
+        },
+        {
+          "type": "ChargingState",
+          "link": {
+            "type": "Boolean",
+            "topicGet": "nuki/(1)/batteryCharging",
+            "map": {
+              "0": "false",
+              "1": "true"
+            }
+          }
+        },
+        {
+          "type": "StatusLowBattery",
+          "link": {
+            "type": "Boolean",
+            "topicGet": "nuki/(1)/batteryCritical",
+            "map": {
+              "0": "false",
+              "1": "true"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
