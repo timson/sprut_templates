@@ -1,8 +1,6 @@
 {
   "manufacturer": "Nuki",
-  "model": "Nuki Smart Lock",
-  "manufacturerId": "Nuki",
-  "modelId": "Pro 3",
+  "model": "Nuki Smart Lock 3.0 Pro",
   "catalogId": 139,
   "status": "Done",
   "services": [
@@ -30,12 +28,13 @@
           "type": "LockCurrentState",
           "link": {
             "type": "Integer",
-            "topicSearch": "nuki/(.*)/state",
             "topicGet": "nuki/(1)/state",
             "topicSet": "nuki/(1)/state",
             "map": {
                 "0": "3;6",
-                "1": "1"
+                "1": "1",
+                "2": "254",
+                "3": "255"
             }
           }
         }
@@ -47,6 +46,7 @@
         {
           "type": "BatteryLevel",
           "link": {
+            "type": "Integer",
             "topicGet": "nuki/(1)/batteryChargeState"
           }
         },
@@ -54,22 +54,14 @@
           "type": "ChargingState",
           "link": {
             "type": "Boolean",
-            "topicGet": "nuki/(1)/batteryCharging",
-            "map": {
-              "0": "false",
-              "1": "true"
-            }
+            "topicGet": "nuki/(1)/batteryCharging"
           }
         },
         {
           "type": "StatusLowBattery",
           "link": {
             "type": "Boolean",
-            "topicGet": "nuki/(1)/batteryCritical",
-            "map": {
-              "0": "false",
-              "1": "true"
-            }
+            "topicGet": "nuki/(1)/batteryCritical"
           }
         }
       ]
