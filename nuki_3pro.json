@@ -11,7 +11,7 @@
           "type": "LockTargetState",
             "link": {
             "type": "Integer",
-            "topicSearch": "nuki/(.*)/state",
+            "topicSearch": "nuki/(.*)/deviceType",
             "topicGet": "nuki/(1)/state",
             "topicSet": "nuki/(1)/lockAction",
             "map": {
