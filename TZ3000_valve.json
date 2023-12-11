@@ -1,0 +1,33 @@
+{
+  "manufacturer": "Zemismart",
+  "model": "ZB-FM101",
+  "manufacturerId": "_TZ3000_wpueorev",
+  "modelId": "TS0001",
+  "catalogId": 2039,
+  "status": "Done",
+  "template": [
+    "/_Tuya/8001_IndicatorMode.json",
+    "/_Tuya/8002_RestartStatus.json"
+  ],
+  "services": [
+    {
+      "type": "Valve",
+      "logics": [
+        {
+          "type": "InUseFromActive"
+        }
+      ],
+      "characteristics": [
+        {
+          "type": "Active",
+          "link": {
+            "endpoint": 1,
+            "cluster": "0006_OnOff",
+            "attribute": "0000_OnOff"
+          }
+        }
+      ]
+    }
+  ]
+}
+

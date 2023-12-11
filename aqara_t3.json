@@ -1,0 +1,15 @@
+{
+  "manufacturer": "Aqara",
+  "model": "SSWQD03LM",
+  "manufacturerId": "Aqara",
+  "modelId": "lumi.light.acn128",
+  "catalogId": 4119,
+  "status": "Test",
+  "date": "03.03.2023",
+  "template": [
+    "/_Light/OnBrightnessTemperature.json",
+    "/_Xiaomi/0201_SwitchPowerMemory.json"
+  ],
+  "issue": "https://github.com/sprut/Hub/issues/2087"
+}
+

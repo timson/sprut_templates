@@ -1,0 +1,69 @@
+{
+  "manufacturer": "Legrand",
+  "model": "Light switch with neutral",
+  "manufacturerId": "Legrand",
+  "modelId": "Light switch with neutral",
+  "catalogId": 416,
+  "status": "Done",
+  "imageType": 16,
+  "template": "/_Base/4003_StartUpOnOff.json",
+  "init": [
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0006_OnOff",
+        "attribute": "0000_OnOff"
+      },
+      "bind": true,
+      "report": 600
+    },
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "000F_BinaryInputBasic"
+      },
+      "bind": true
+    },
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0003_Identify"
+      },
+      "bind": true
+    }
+  ],
+  "services": [
+    {
+      "type": "Switch",
+      "characteristics": [
+        {
+          "type": "On",
+          "link": {
+            "endpoint": 1,
+            "cluster": "0006_OnOff",
+            "attribute": "0000_OnOff"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Knock",
+      "type": "StatelessProgrammableSwitch",
+      "characteristics": [
+        {
+          "type": "ProgrammableSwitchEvent",
+          "link": {
+            "endpoint": 1,
+            "cluster": "0003_Identify",
+            "attribute": "0000_IdentifyTime",
+            "map": {
+              "SINGLE_PRESS": 60
+            }
+          },
+          "validValues": "SINGLE_PRESS"
+        }
+      ]
+    }
+  ]
+}
+

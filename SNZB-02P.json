@@ -1,0 +1,74 @@
+{
+    "manufacturer": "eWeLink",
+    "model": "SNZB-02P",
+    "manufacturerId": "eWeLink",
+    "modelId": "SNZB-02P",
+    "template": "/_Battery/BatteryPercentageRemaining.json",
+    "init": [
+        {
+            "link": {
+                "endpoint": 1,
+                "cluster": "0402_TemperatureMeasurement",
+                "attribute": "0000_MeasuredValue"
+            },
+            "bind": true,
+            "report": {
+                "min": 30,
+                "max": 3600,
+                "change": 25
+            }
+        },
+        {
+            "link": {
+                "endpoint": 1,
+                "cluster": "0405_RelativeHumidityMeasurement",
+                "attribute": "0000_MeasuredValue"
+            },
+            "bind": true,
+            "report": {
+                "min": 30,
+                "max": 3600,
+                "change": 50
+            }
+        },
+        {
+            "link": {
+                "endpoint": 1,
+                "cluster": "0001_PowerConfiguration",
+                "attribute": "0021_BatteryPercentageRemaining"
+            },
+            "bind": true,
+            "report": true
+        }
+    ],
+    "services": [
+        {
+            "type": "TemperatureSensor",
+            "characteristics": [
+                {
+                    "type": "CurrentTemperature",
+                    "link": {
+                        "endpoint": 1,
+                        "cluster": "0402_TemperatureMeasurement",
+                        "attribute": "0000_MeasuredValue"
+                    }
+                }
+            ]
+        },
+        {
+            "visible": true,
+            "type": "HumiditySensor",
+            "characteristics": [
+                {
+                    "type": "CurrentRelativeHumidity",
+                    "link": {
+                        "endpoint": 1,
+                        "cluster": "0405_RelativeHumidityMeasurement",
+                        "attribute": "0000_MeasuredValue"
+                    }
+                }
+            ]
+        }
+    ]
+}
+
