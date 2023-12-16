@@ -1,0 +1,59 @@
+{
+    "manufacturer": "Xiaomi",
+    "model": "SmartMi Convector Heater 1S",
+    "modelId": "zhimi.heater.zb1",
+    "services": [
+      {
+        "type": "Thermostat",
+        "characteristics": [
+          {
+            "type": "CurrentHeatingCoolingState",
+            "link": {
+              "type": "Boolean",
+              "id": "2.2",
+              "map": {
+                "OFF": "false",
+                "HEAD": "true"
+              }
+            }
+          },
+          {
+            "type": "CurrentTemperature",
+            "link": {
+              "type": "Double",
+              "id": "5.8"
+            }
+          },
+          {
+            "type": "CurrentRelativeHumidity",
+            "link": {
+              "type": "Integer",
+              "id": "5.7"
+            }
+          },
+          {
+            "type": "TargetTemperature",
+            "link": {
+              "type": "Integer",
+              "id": "2.6"
+            },
+            "minStep": 1,
+            "minValue": 5,
+            "maxValue": 35
+          },
+          {
+            "type": "TargetHeatingCoolingState",
+            "link": {
+              "type": "Boolean",
+              "id": "2.2",
+              "map": {
+                "OFF": "false",
+                "HEAT": "true"
+              }
+            },
+            "validValues": "OFF,HEAT"
+          }
+        ]
+      }
+    ]
+}
