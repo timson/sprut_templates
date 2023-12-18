@@ -4,18 +4,30 @@
     "modelId": "zhimi.heater.zb1",
     "services": [
       {
-        "type": "Thermostat",
+        "type": "HeaterCooler",
         "characteristics": [
           {
-            "type": "CurrentHeatingCoolingState",
+            "type": "Active",
             "link": {
               "type": "Boolean",
               "id": "2.2",
               "map": {
-                "OFF": "false",
-                "HEAD": "true"
+                "INACTIVE": "false",
+                "ACTIVE": "true"
               }
             }
+          },
+          {
+            "type": "CurrentHeaterCoolerState",
+            "link": {
+              "type": "Boolean",
+              "id": "2.2",
+              "map": {
+                "INACTIVE": "false",
+                "HEATING": "true"
+              }
+            },
+            "validValues": "INACTIVE,HEATING"
           },
           {
             "type": "CurrentTemperature",
@@ -25,33 +37,30 @@
             }
           },
           {
-            "type": "CurrentRelativeHumidity",
-            "link": {
-              "type": "Integer",
-              "id": "5.7"
-            }
-          },
-          {
             "type": "TargetTemperature",
             "link": {
               "type": "Integer",
               "id": "2.6"
             },
             "minStep": 1,
-            "minValue": 5,
-            "maxValue": 35
+            "minValue": 16,
+            "maxValue": 28
           },
           {
-            "type": "TargetHeatingCoolingState",
+            "type": "TargetHeaterCoolerState",
+            "validValues": "AUTO"
+          }
+        ]
+      },
+      {
+       "type": "HumiditySensor",
+        "characteristics": [
+          {
+            "type": "CurrentRelativeHumidity",
             "link": {
-              "type": "Boolean",
-              "id": "2.2",
-              "map": {
-                "OFF": "false",
-                "HEAT": "true"
-              }
-            },
-            "validValues": "OFF,HEAT"
+              "type": "Integer",
+              "id": "5.7"
+            }
           }
         ]
       }
