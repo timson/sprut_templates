@@ -1,0 +1,26 @@
+{
+  "manufacturer": "Xiaomi",
+  "model": "Philips light 3",
+  "modelId": "philips.light.sread3",
+  "services": [
+    {
+      "type": "Lightbulb",
+      "characteristics": [
+        {
+          "type": "On",
+          "link": {
+            "type": "Boolean",
+            "id": "2.1"
+          }
+        },
+        {
+          "type": "Brightness",
+          "link": {
+            "type": "Integer",
+            "id": "2.3"
+          }
+        }
+      ]
+    }
+  ]
+}
